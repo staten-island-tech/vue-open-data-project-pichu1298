@@ -1,5 +1,6 @@
 <template>
   <div class="flex flex-wrap justify-between w-full gap-4 bg-gray-100 p-4">
+    <h1>Loading..</h1>
     <SquirrelItems v-for="(squirel, index) in squirels" :key="index" :squirel="squirel" />
   </div>
 </template>
