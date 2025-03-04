@@ -4,8 +4,7 @@ import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <header></header>
-
+  <h1 class="text-center">🐿️Squirrels🐿️</h1>
   <RouterView />
 </template>
 

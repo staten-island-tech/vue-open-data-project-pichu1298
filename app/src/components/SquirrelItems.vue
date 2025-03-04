@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <h1>{{ squirel.date }}</h1>
+  <div class="w-[30%]">
+    <h1>🐿️Squirel ID🐿️: {{ squirel.unique_squirrel_id }}</h1>
+    <h1 class="">Squirel Date of Apperance: {{ squirel.date }}</h1>
+    <h1>🐾Location Spotted🐾: {{ squirel.x }}, {{ squirel.y }}</h1>
   </div>
 </template>
 
