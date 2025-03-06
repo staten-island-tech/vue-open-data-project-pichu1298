@@ -1,9 +1,11 @@
 <template>
-  <div></div>
+  <div>
+    <BarChart :data="SquirrelItems" />
+  </div>
 </template>
 
 <script setup>
-import { Bar } from 'vue-chartjs'
+import BarChart from '@/components/BarChart.vue'
 </script>
 
 <style lang="scss" scoped></style>

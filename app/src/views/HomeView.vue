@@ -9,7 +9,6 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import SquirrelItems from '@/components/SquirrelItems.vue'
-import SideBar from '@/components/SideBar.vue'
 
 const squirels = ref([])
 
