@@ -3,7 +3,6 @@
 </template>
 
 <script>
-// DataPage.vue
 import { Bar } from 'vue-chartjs'
 import {
   Chart as ChartJS,
@@ -20,17 +19,14 @@ ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 export default {
   name: 'BarChart',
   components: { Bar },
-  computed: {
-    chartData() {
-      return {
-        labels: this.chartData.shift,
-        data: this.chartData.shift,
-      }
+  props: {
+    chartData: {
+      type: Object,
+      required: true,
     },
-    chartOptions() {
-      return {
-        responsive: true,
-      }
+    chartOptions: {
+      type: Object,
+      default: () => {},
     },
   },
 }
