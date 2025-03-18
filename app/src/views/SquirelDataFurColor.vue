@@ -29,7 +29,7 @@ watch(squirels, () => {
     labels: Object.keys(colorCounts),
     datasets: [
       {
-        label: 'Fur Color',
+        label: 'Amount of Squirrels',
         data: Object.values(colorCounts),
         backgroundColor: ['gray', 'black', 'brown', 'red', 'yellow'], // Customize colors
       },

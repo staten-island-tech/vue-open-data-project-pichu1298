@@ -25,6 +25,22 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/SquirelDataFurColor.vue'),
     },
+    {
+      path: '/squirelLocation',
+      name: 'squirelLocation',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/SquirelLocation.vue'),
+    },
+    {
+      path: '/squirelActions',
+      name: 'squirelActions',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/SquirrelActions.vue'),
+    },
   ],
 })
 

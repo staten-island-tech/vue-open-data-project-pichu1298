@@ -1,6 +1,6 @@
 <template>
-  <div class="w-[90%] ml-[10%]">
-    <BarChart :chartData="shiftData" />
+  <div class="ml-[10%]">
+    <BarChart :chart-data="locationData" />
   </div>
 </template>
 
@@ -8,9 +8,7 @@
 import BarChart from '@/components/BarChart.vue'
 import { getData, squirels } from '@/components/SquirelCall.js'
 import { onMounted, ref, watch } from 'vue'
-
-// Make shiftData reactive
-const shiftData = ref({
+const locationData = ref({
   labels: [],
   datasets: [],
 })
@@ -19,28 +17,29 @@ const shiftData = ref({
 watch(squirels, () => {
   if (!squirels.value.length) return // Ensure data exists
 
-  const numOfPM = squirels.value.filter((squirrel) => squirrel.shift === 'PM').length
-  const numOfAM = squirels.value.filter((squirrel) => squirrel.shift === 'AM').length
+  const numOfAbove = squirels.value.filter(
+    (squirrel) => squirrel.location === 'Above Ground',
+  ).length
+  const numOfOn = squirels.value.filter((squirrel) => squirrel.location === 'Ground Plane').length
 
-  console.log(numOfPM, numOfAM) // Debugging check
+  console.log(numOfAbove, numOfOn) // Debugging check
 
   // Update shiftData reactively
-  shiftData.value = {
-    labels: ['PM', 'AM'], // X-axis labels
+  locationData.value = {
+    labels: ['Above Ground', 'On Ground'], // X-axis labels
     datasets: [
       {
         label: 'Amount of Squirrels',
-        data: [numOfPM, numOfAM], // Y-axis values
+        data: [numOfAbove, numOfOn], // Y-axis values
         backgroundColor: ['blue', 'yellow'], // Bar colors
       },
     ],
   }
 })
 
-// Fetch data when the component is mounted
 onMounted(async () => {
-  await getData() // Ensure data is fully loaded
+  await getData() // Fetch API data
 })
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>
