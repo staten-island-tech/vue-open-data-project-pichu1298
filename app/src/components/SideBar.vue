@@ -5,6 +5,7 @@
     <RouterLink to="/squirelDataFurColor" class="w-[100%]">Fur Color</RouterLink>
     <RouterLink to="/squirelLocation" class="w-[100%]">Squirel Location</RouterLink>
     <RouterLink to="/squirelActions" class="w-[100%]"> Seen Actions</RouterLink>
+    <RouterLink to="/squirelDate" class="w-[100%]">Month Spotted</RouterLink>
   </div>
 </template>
 
