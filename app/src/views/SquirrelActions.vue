@@ -55,9 +55,10 @@ watch(squirels, () => {
   console.log(actionCounts) // Debugging check
 
   // Filter out actions with 0 counts
-  const filteredActions = Object.keys(actionCounts).filter((key) => actionCounts[key] > 0) //Filters the actions... Object.keys grabs the KEY name. Basically the "Name" : item. Grabs the Name portion. Filters each key for any key with a number above 0.
+  const filteredActions = Object.keys(actionCounts).filter((key) => actionCounts[key] > 0)
+  //Filters the actions... Object.keys grabs the KEY name. Basically the "Name" : item. Grabs the Name portion. Filters each key for any key with a number above 0.
   const filteredCounts = filteredActions.map((key) => actionCounts[key])
-  //This grabs the only the keys.
+  //This grabs the only the key names.
 
   // Update the chart data
   actionData.value = {

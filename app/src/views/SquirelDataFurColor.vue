@@ -22,7 +22,10 @@ watch(squirels, () => {
 
   squirels.value.forEach((squirrel) => {
     const color = squirrel.primary_fur_color || 'Unknown' // Handle missing values
+
+    //color equals the name of each color
     colorCounts[color] = (colorCounts[color] || 0) + 1
+    //creates colorCounts as a key, for each color it updates every squirrel that has that color
   })
 
   furData.value = {
@@ -31,7 +34,7 @@ watch(squirels, () => {
       {
         label: 'Amount of Squirrels',
         data: Object.values(colorCounts),
-        backgroundColor: ['gray', 'black', 'brown', 'red', 'yellow'], // Customize colors
+        backgroundColor: ['#4169E1'], // Customize colors
       },
     ],
   }

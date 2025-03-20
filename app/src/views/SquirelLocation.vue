@@ -31,7 +31,7 @@ watch(squirels, () => {
       {
         label: 'Amount of Squirrels',
         data: [numOfAbove, numOfOn], // Y-axis values
-        backgroundColor: ['blue', 'yellow'], // Bar colors
+        backgroundColor: ['#ADD8E6', '#8B4513'], // Bar colors
       },
     ],
   }

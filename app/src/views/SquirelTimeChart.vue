@@ -19,7 +19,7 @@ const shiftData = ref({
 watch(squirels, () => {
   if (!squirels.value.length) return // Ensure data exists
 
-  const numOfPM = squirels.value.filter((squirrel) => squirrel.shift === 'PM').length
+  const numOfPM = squirels.value.filter((squirrel) => squirrel.shift === 'PM').length //Get all amounts of PM squirrels
   const numOfAM = squirels.value.filter((squirrel) => squirrel.shift === 'AM').length
 
   console.log(numOfPM, numOfAM) // Debugging check
@@ -31,7 +31,7 @@ watch(squirels, () => {
       {
         label: 'Amount of Squirrels',
         data: [numOfPM, numOfAM], // Y-axis values
-        backgroundColor: ['blue', 'yellow'], // Bar colors
+        backgroundColor: ['#000000', '#FFD700'], // Bar colors
       },
     ],
   }
